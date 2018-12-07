@@ -30,4 +30,5 @@ def read_sailor_data():
         next(csv_reader)
         for line in csv_reader:
             performance_dict[line[0]] = list(line[1], line[2])
+
     return performance_dict
