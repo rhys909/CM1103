@@ -23,11 +23,11 @@ def sort_series(sailors_in_series):
     return sailors_in_series
 
 def read_sailor_data(file_to_read='sailor_performance.csv'):
-
+    #Code to read the CSV file
     with open(file_to_read, 'r') as csv_file:
         performance_dict = {}
         csv_reader = csv.reader(csv_file)
-
+        #Code to append the dictionary with the values in CSV file
         next(csv_reader)
         for line in csv_reader:
             performance_dict[line[0]] = list(line[1], line[2])
@@ -52,6 +52,7 @@ name= input(">>> Name of the series?")
 def series(name):
     read_sailor_data(file_to_read='sailor_performance.csv')
     count = 0
+    sailors_series_generated = {}
     for key in peformance_dict:
         sailors_series_generated[key] = sailors_series_generated[list()]
     for count in range(0, 5):
