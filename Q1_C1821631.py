@@ -1,4 +1,5 @@
 import csv
+import random
 #two variables added for testing
 
 sailor = [("Bob", [2, 4, 1, 1, 2, 5])]
@@ -8,7 +9,7 @@ sailors_in_series = [("Alice", [1, 2, 1, 1, 1, 1]), ("Bob", [3, 1, 5, 3, 2, 5]),
 
 def series_score(sailor):
     #Take the variable of the sailor + take their worst score
-    max_score = sorted(sailor[1])[-1]
+    max_score = (sailor[1].sort())[-1]
     #Get the sum of their series
     total = sum(sorted(sailor[1])) - max_score
     return total
@@ -21,9 +22,9 @@ def sort_series(sailors_in_series):
     #Return the sorted list
     return sailors_in_series
 
-def read_sailor_data():
+def read_sailor_data(file_to_read='sailor_performance.csv'):
 
-    with open('sailor_performance.csv', 'r') as csv_file:
+    with open(file_to_read, 'r') as csv_file:
         performance_dict = {}
         csv_reader = csv.reader(csv_file)
 
@@ -32,3 +33,17 @@ def read_sailor_data():
             performance_dict[line[0]] = list(line[1], line[2])
 
     return performance_dict
+
+def generate_performance(performance_dict):
+    #Blank dictionary for generated performances to be put into
+    performance_generated = {}
+    #Loop to take each key and value from the sailor data
+    read_sailor_data(file_to_read='sailor_performance.csv')
+    for key, value in performance_dict:
+        performance_generated[key] = performance_generated[random.normalvgariate(value[0], value[1])]
+    return performance_generated
+
+def calculate_finishing_order(performance_generated):
+    generate_performance(performance_dict)
+    finishing_order = [key for (key, value) in sorted(performance_generated.value())]
+    return finishing_order
