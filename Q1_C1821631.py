@@ -47,3 +47,15 @@ def calculate_finishing_order(performance_generated):
     generate_performance(performance_dict)
     finishing_order = [key for (key, value) in sorted(performance_generated.value())]
     return finishing_order
+
+name= input(">>> Name of the series?")
+def series(name):
+    read_sailor_data(file_to_read='sailor_performance.csv')
+    count = 0
+    for key in peformance_dict:
+        sailors_series_generated[key] = sailors_series_generated[list()]
+    for count in range(0, 5):
+        #Add scores for sailors to the value in the form of a list
+        
+        count += 1
+    return sailors_series_generated
