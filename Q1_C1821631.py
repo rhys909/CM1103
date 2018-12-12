@@ -51,14 +51,9 @@ def generate_performance(performance_list):
     performance_generated = {}
     #Loop to take each key and value from the sailor data
     read_sailor_data(file_to_read='sailor_performance.csv')
-<<<<<<< HEAD
     for i in performance_list.items():
         x = random.normalvariate(int(i[1][0]), int(i[1][1]))
         performance_generated.update({i[0] : x})
-=======
-    for key, value in performance_dict:
-        performance_generated[key] = performance_generated[random.normalvgariate(int(value[0]), int(value[1]))]
->>>>>>> 3073e142b45492fbe6582bc5d70ed6274e96d1fa
     return performance_generated
 
 
@@ -75,7 +70,6 @@ def calculate_finishing_order(performance_generated):
         count+=1
     return finishing_order
 
-<<<<<<< HEAD
 
 
 performance_list = read_sailor_data(file_to_read='sailor_performance.csv')
@@ -99,18 +93,3 @@ for count in range(0, 6):
 
 print(sailors_series_generated)
 print(sort_series(sailors_series_generated.items()))
-=======
-name= input(">>> Name of the series?")
-def series(name):
-    read_sailor_data(file_to_read='sailor_performance.csv')
-    count = 0
-    sailors_series_generated = {}
-    for key in peformance_dict:
-        sailors_series_generated[key] = sailors_series_generated[list()]
-        for count in range(0, 5):
-        #Add scores for sailors to the value in the form of a list
-        generate_performance(performance_dict)
-        calculate_finishing_order(performance_generated)
-        count += 1
-    return sailors_series_generated
->>>>>>> 3073e142b45492fbe6582bc5d70ed6274e96d1fa
