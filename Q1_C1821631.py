@@ -14,11 +14,16 @@ sailors_in_series = [("Alice", [1, 2, 1, 1, 1, 1]), ("Bob", [3, 1, 5, 3, 2, 5]),
 
 def series_score(sailor):
     #Take the variable of the sailor + take their worst score
-    max_score = (sailor[1].sort())[-1]
+    max_score = sorted(sailor[1])[-1]
     #Get the sum of their series
     total = sum(sorted(sailor[1])) - max_score
     return total
 
+"""
+list compreension?
+for i in list:
+    for
+"""
 
 def sort_series(sailors_in_series):
     #Get the scores of the sailors
@@ -92,4 +97,5 @@ for count in range(0, 6):
         sailors_series_generated[x].append(i+1)
 
 print(sailors_series_generated)
-print(sort_series(sailors_series_generated.items()))
+sorted_series = sort_series(list(sailors_series_generated.items()))
+print(dict(sorted_series))
